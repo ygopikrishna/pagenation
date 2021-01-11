@@ -2,9 +2,6 @@
 //  ViewController.swift
 //  TestProject
 //
-//  Created by Gopi Krishna Gajawada on 1/7/21.
-//  Copyright © 2021 Gopi Krishna Gajawada. All rights reserved.
-//
 
 import UIKit
 
@@ -52,6 +49,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             if self.hitsModel.count > 0 {
                 cell?.configureCell(model: self.hitsModel[indexPath.row])
             }
+            if self.hitsModel.count - indexPath.row <= 10 {
+                fetchNextPage()
+            }
             return cell!
         }
     
@@ -63,14 +63,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let secondVC = segue.destination as? LargeImageViewController {
             secondVC.largeImageUrl = largeImageUrl
-        }
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if let lastIndex = tableView.indexPathsForVisibleRows?.last {
-            if self.hitsModel.count - lastIndex.row <= 10 {
-                fetchNextPage()
-            }
         }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633D8FCF25ACDEC9006F6FBA /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D8FCE25ACDEC9006F6FBA /* ImageDownloader.swift */; };
 		F250830D25A79FC1004F2410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F250830C25A79FC1004F2410 /* AppDelegate.swift */; };
 		F250830F25A79FC1004F2410 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F250830E25A79FC1004F2410 /* SceneDelegate.swift */; };
 		F250831125A79FC1004F2410 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F250831025A79FC1004F2410 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		633D8FCE25ACDEC9006F6FBA /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		F250830925A79FC1004F2410 /* Pagenation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pagenation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F250830C25A79FC1004F2410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F250830E25A79FC1004F2410 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				F250832225A7A213004F2410 /* ImageModel.swift */,
 				F250832425A7A552004F2410 /* PreviewImageCell.swift */,
 				F250832625A7B152004F2410 /* LargeImageViewController.swift */,
+				633D8FCE25ACDEC9006F6FBA /* ImageDownloader.swift */,
 				F250831225A79FC1004F2410 /* Main.storyboard */,
 				F250831525A79FC2004F2410 /* Assets.xcassets */,
 				F250831725A79FC2004F2410 /* LaunchScreen.storyboard */,
@@ -109,7 +112,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Manoj Kumar Gajawada";
 				TargetAttributes = {
 					F250830825A79FC1004F2410 = {
@@ -160,6 +163,7 @@
 				F250830D25A79FC1004F2410 /* AppDelegate.swift in Sources */,
 				F250832125A7A207004F2410 /* ImageViewModel.swift in Sources */,
 				F250830F25A79FC1004F2410 /* SceneDelegate.swift in Sources */,
+				633D8FCF25ACDEC9006F6FBA /* ImageDownloader.swift in Sources */,
 				F250832725A7B152004F2410 /* LargeImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +216,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -272,6 +277,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -305,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJBGALS7T7;
 				INFOPLIST_FILE = Pagenation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,6 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJBGALS7T7;
 				INFOPLIST_FILE = Pagenation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

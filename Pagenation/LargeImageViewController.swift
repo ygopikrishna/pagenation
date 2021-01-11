@@ -2,9 +2,6 @@
 //  LargeImageViewController.swift
 //  TestProject
 //
-//  Created by Gopi Krishna Gajawada on 1/7/21.
-//  Copyright © 2021 Gopi Krishna Gajawada. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -22,8 +19,12 @@ class LargeImageViewController: UIViewController {
     func setImage(imageUrl: String?) {
         guard let urlString = imageUrl else { return }
         let url = URL(string: urlString)
-        if let data = try? Data(contentsOf: url!) {
-            largeImageView.image = UIImage(data: data)
+        DispatchQueue.global(qos: .background).async {
+            if let data = try? Data(contentsOf: url!) {
+                DispatchQueue.main.async { [weak self] in
+                    self?.largeImageView.image = UIImage(data: data)
+                }
+            }
         }
     }
 }

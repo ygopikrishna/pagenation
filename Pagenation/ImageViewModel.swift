@@ -2,9 +2,6 @@
 //  ImageViewModel.swift
 //  TestProject
 //
-//  Created by Gopi Krishna Gajawada on 1/7/21.
-//  Copyright © 2021 Gopi Krishna Gajawada. All rights reserved.
-//
 
 import Foundation
 
@@ -15,7 +12,8 @@ class ImageViewModel {
     var delegate: ImageViewProtocol?
     
     func getImages(onSuccess success:@escaping (_ hits: [Hits]) -> Void, onFailure failure:@escaping () -> Void)  {
-        let urlString = "https://pixabay.com/api/?key=16319352-2bb88398aa817f97a71677f6d&q=cats&image_type=photo@page=\(currentPage)"
+        DispatchQueue.global(qos: .background).async {
+            let urlString = "https://pixabay.com/api/?key=16319352-2bb88398aa817f97a71677f6d&q=cats&image_type=photo@page=\(self.currentPage)"
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if error == nil, let data = data {
@@ -23,13 +21,18 @@ class ImageViewModel {
                         let decoder = JSONDecoder()
                         let imageData = try decoder.decode(ImageModel.self, from: data)
                         self.model = imageData
-                        success(imageData.hits)
+                        DispatchQueue.main.async {
+                            success(imageData.hits)
+                        }
                     } catch {
                         self.model = nil
-                        failure()
+                        DispatchQueue.main.async {
+                            failure()
+                        }
                     }
                 }
             }.resume()
+        }
         }
     }
     
